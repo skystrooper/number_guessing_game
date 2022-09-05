@@ -1,0 +1,67 @@
+import random
+
+print("Welcome to the Number Game!")
+print("I'm thinking of a number between 1 and 100.")
+
+tryagain = True
+
+while tryagain == True:
+    level = input("choose a diff. easy or hard:").lower()
+
+    number = random.randint(1,101)
+
+
+    if level == 'easy':
+        attempts = 10
+        again = True
+        print("You have 10 attempts remaining to guess the number")
+
+        while again == True:
+            guess = int(input("make a guess"))
+            if guess == number:
+                print("HURRAH, CORRECT")
+                exit()
+            elif guess > number:
+                print("Guess is too high")
+            elif guess < number:
+                print("guess is too low")
+            else:
+                print("error")
+
+            attempts -= 1
+            print(f"you have {attempts} attempts left.")
+            if attempts == 0:
+                print("OOPSSSSS YOU LOST")
+                again = False
+
+        a = input("Would you like to go again?")
+        if a == 'no':
+            tryagain = False
+
+    elif level == 'hard':
+        attempts = 5
+        again = True
+        print("You have 5 attempts remaining to guess the number")
+
+        while again == True:
+            guess = int(input("make a guess"))
+            if guess == number:
+                print("HURRAH, CORRECT")
+                exit()
+            elif guess > number:
+                print("Guess is too high")
+            elif guess < number:
+                print("guess is too low")
+            else:
+                print("error")
+
+            attempts -= 1
+            print(f"you have {attempts} attempts left.")
+            if attempts == 0:
+                print("OOPSSSSS YOU LOST")
+                again = False
+
+
+        a = input("Would you like to go again?")
+        if a == 'no':
+            tryagain = False
